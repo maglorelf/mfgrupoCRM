@@ -1,0 +1,67 @@
+﻿@using Syncfusion.EJ2
+@{
+    var defaultanimation = new Syncfusion.EJ2.Popups.DialogAnimationSettings { Effect = Syncfusion.EJ2.Popups.DialogEffect.Zoom };
+}
+@{
+    ViewBag.Title = "Dialog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Dialog Features:</h2>
+<br/>
+<li> Dialog Samples - Default</li>
+<li> Position - Center Center</li>
+<li> Animation - Zoom</li>
+<li> DialogType - Non-modal</li>
+<li> RTL</li>
+<li> Draggable</li>
+<li> Theme - Bootstrap-Theme</li>
+<br/>
+<div id = "ControlRegion">
+                  <div class="col-lg-12 control-section" id="target">
+        <ejs-button id="normalbtn" content="Open"></ejs-button>
+        <ejs-dialog id="default_dialog" 
+                 allowDragging="true"
+                 enableRtl="true" 
+           animationSettings="defaultanimation" width="500px" 
+                 isModal="false" 
+           target="#target" open="dialogOpen" Content="<p>In the Succinctly series, Syncfusion created a robust, free library of more than 130 technical e - books formatted for PDF, Kindle, and EPUB.<br> <br>The Succinctly series was born in 2012 out of a desire to provide concise technical e-books for software developers.Each title in the Succinctly series is written by a carefully chosen expert and provides essential content in about 100 pages.</p>"
+                    close="dialogClose" showCloseIcon="true" header="About SYNCFUSION succintly series">
+            <e-dialog-buttons>
+                <e-dialog-dialogbutton buttonModel="ViewBag.button" click="dlgButtonClick"></e-dialog-dialogbutton>
+            </e-dialog-buttons>
+            <e-dialog-position 
+                  X="center" Y="center"
+          ></e-dialog-position>
+        </ejs-dialog>
+    </div>
+	<style>
+    .control-section {
+        padding-left: 10px;
+        min-height: 350px;
+        height: 100%;
+    }
+    @@media screen and (min-width: 150px) and (max-width: 480px) {
+        .control-section {
+            margin-bottom: 30px;
+        }
+        .control-wrapper {
+            margin-bottom: 0px;
+        }
+    }
+</style>
+    <script>
+        document.getElementById("normalbtn").addEventListener('click', function () {
+            var dialogObj = document.getElementById("default_dialog")
+            dialogObj.ej2_instances[0].show();
+        });
+        function dialogClose() {
+            document.getElementById("normalbtn").style.display = "block";
+        }
+        function dialogOpen() {
+            document.getElementById("normalbtn").style.display = "none";
+        }
+        function dlgButtonClick() {
+            window.open('https://www.syncfusion.com/company/about-us');
+         }
+    </script>
+</div>

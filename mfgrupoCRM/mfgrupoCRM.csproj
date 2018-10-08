@@ -1,19 +1,19 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
-
-  <PropertyGroup>
+   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-mfgrupoCRM-BB4B3224-7DAC-4B05-9260-D3C4293F0A8C</UserSecretsId>
   </PropertyGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.EJ2" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.Compression.NETStandard" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.XlsIO.NETStandard" Version="16.3.0.21" />
+    <PackageReference Include="Syncfusion.Pdf.NETStandard" Version="16.3.0.21" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+  </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.4" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0-preview2-35157" PrivateAssets="All" />
     <PackageReference Include="Syncfusion.EJ.AspNet.Core" Version="16.3.0.21" />
     <PackageReference Include="Syncfusion.Licensing" Version="16.3.0.22-beta" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\scripts\web\" />
-  </ItemGroup>
-
 </Project>
