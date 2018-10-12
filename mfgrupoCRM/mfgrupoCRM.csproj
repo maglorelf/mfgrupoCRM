@@ -16,4 +16,18 @@
     <PackageReference Include="Syncfusion.EJ.AspNet.Core" Version="16.3.0.21" />
     <PackageReference Include="Syncfusion.Licensing" Version="16.3.0.22-beta" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Update="Views\Contact\Export.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Contact\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Contact\Import.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+    <Content Update="Views\Manage\Index.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
 </Project>

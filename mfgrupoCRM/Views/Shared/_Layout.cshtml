@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -16,14 +20,14 @@
               asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
 
-    </environment>    
-@* Syncfusion Essential JS 2 Styles *@
+    </environment>
+    @* Syncfusion Essential JS 2 Styles *@
 
-<link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.syncfusion.com/ej2/bootstrap.css" />
 
-@* Syncfusion Essential JS 2 Scripts *@
+    @* Syncfusion Essential JS 2 Scripts *@
 
-<script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
+    <script src="https://cdn.syncfusion.com/ej2/dist/ej2.min.js"></script>
 
 </head>
 <body>
@@ -41,8 +45,15 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    @if (SignInManager.IsSignedIn(User))
+                    {
+                        <li><a asp-area="" asp-controller="Contact" asp-action="Index">Contacts</a></li>
+                        <li><a asp-area="" asp-controller="Import" asp-action="Index">Import</a></li>
+                        <li><a asp-area="" asp-controller="Export" asp-action="Index">Export</a></li>
+                        <li><a asp-area="" asp-controller="Manage" asp-action="Index">Manage users</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Useful">Useful links</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                    }
                 </ul>
                 <partial name="_LoginPartial" />
             </div>

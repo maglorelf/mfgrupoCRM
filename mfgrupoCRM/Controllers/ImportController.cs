@@ -10,12 +10,12 @@ using Microsoft.AspNetCore.Http.Features;
 using System.IO;
 namespace mfgrupoCRM.Controllers
 {
-    public partial class UploadController : Controller
+    public partial class ImportController : Controller
     {
         //
         // GET: /UploadDefault/
               private IHostingEnvironment hostingEnv;
-        public UploadController(IHostingEnvironment env)
+        public ImportController(IHostingEnvironment env)
         {
             this.hostingEnv = env;
         }
@@ -82,7 +82,7 @@ namespace mfgrupoCRM.Controllers
             }
             return Content("");
         }
-        public ActionResult UploadFeatures()
+        public ActionResult Index()
         {
             return View();
         } 

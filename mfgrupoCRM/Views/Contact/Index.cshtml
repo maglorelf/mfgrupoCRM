@@ -1,0 +1,42 @@
+﻿@{
+    ViewData["Title"] = "Contacts main page";
+}
+<h2>@ViewData["Title"]</h2>
+
+
+<div id="ControlRegion">
+    <ejs-grid id="DataGrid" dataSource="ViewBag.dataSource"
+              allowPaging="true"
+              allowSorting="true"
+              allowResizing="true"
+              allowFiltering="true"
+              allowGrouping="true"
+              toolbar="@(new List<string>() { "Add", "Edit", "Delete", "Update", "Cancel","Search" })">
+        <e-grid-editSettings allowAdding="true" allowDeleting="true" allowEditing="true" mode="Dialog"></e-grid-editSettings>
+        <e-grid-pagesettings pageCount="5"></e-grid-pagesettings>
+        <e-grid-filterSettings type="Menu"></e-grid-filterSettings>
+        <e-grid-selectionsettings type="Multiple"></e-grid-selectionsettings>
+        <e-grid-groupsettings showDropArea="false" columns="@(new string[] { "CustomerID"})"></e-grid-groupsettings>
+        <e-grid-columns>
+            <e-grid-column field="OrderID" validationRules="@(new { required=true})" headerText="Order ID" minWidth="120" width="200" maxWidth="300" textAlign="Right"></e-grid-column>
+            <e-grid-column field="CustomerID" headerText="Customer Name" validationRules="@(new { required=true})" minWidth="8" width="200"></e-grid-column>
+            <e-grid-column field="OrderDate" headerText=" Order Date" editType="datepickeredit" textAlign="Right" format="yMd" minWidth="8" width="200"></e-grid-column>
+            <e-grid-column field="Freight" headerText="Freight" validationRules="@(new { required=true})" allowResizing="true" editType="numericedit" textAlign="Right" format="C2" width="150" minWidth="8"></e-grid-column>
+            <e-grid-column field="ShipName" headerText="Ship Name" minWidth="8" width="300"></e-grid-column>
+            <e-grid-column field="ShippedDate" headerText="Shipped Date" textAlign="Right" format="yMd"
+                           allowResizing="true"
+                           width="200"></e-grid-column>
+            <e-grid-column field="ShipCountry" headerText="Ship Country" editType="dropdownedit" minWidth="8" width="200"></e-grid-column>
+            <e-grid-column field="Verified" displayAsCheckBox="true" type="boolean" headerText="Verified" editType="booleanedit" minWidth="8" width="200"></e-grid-column>
+        </e-grid-columns>
+        <e-grid-aggregates>
+            <e-grid-aggregate>
+                <e-aggregate-columns>
+                    <e-aggregate-column field="Freight" type="Sum" groupFooterTemplate="Total units: ${Sum}"></e-aggregate-column>
+                    <e-aggregate-column field="Verified" type="Truecount" groupFooterTemplate="Verified: ${Truecount}"></e-aggregate-column>
+                    <e-aggregate-column field="Freight" type="Max" groupCaptionTemplate="Maximum: ${Max}"></e-aggregate-column>
+                </e-aggregate-columns>
+            </e-grid-aggregate>
+        </e-grid-aggregates>
+    </ejs-grid>
+</div>

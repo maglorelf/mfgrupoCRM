@@ -1,23 +1,39 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-using System.Collections;
-using Syncfusion.EJ2.Base;
+using mfgrupoCRM.Models;
+
 namespace mfgrupoCRM.Controllers
 {
-			public class DataGridController : Controller
+    public class ContactController : Controller
     {
-        public IActionResult DataGridFeatures()
+        public IActionResult Index()
         {
             var data = OrdersDetails.GetAllRecords();
             ViewBag.dataSource = data;
             return View();
         }
+
+        public IActionResult Import()
+        {
+            ViewData["Message"] = "Import Contacts.";
+
+            return View();
+        }
+
+        public IActionResult Export()
+        {
+            ViewData["Message"] = "Export contacts";
+
+            return View();
+        }
+
+      
     }
-public class OrdersDetails
+    public class OrdersDetails
     {
         public static List<OrdersDetails> order = new List<OrdersDetails>();
         public OrdersDetails()
