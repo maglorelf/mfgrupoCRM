@@ -1,0 +1,54 @@
+Model mfgrupoCRM
+
+
+Customers
+	Basic data
+	Custom fields
+	Associated files
+	
+Customer Events
+
+Events
+Events 
+	List of events 
+Campaings
+
+Gamification Roles	
+	
+	Game 
+	
+		
+	
+Management of users
+Users
+Roles
+
+
+Menu:
+	Main page (Home)
+	Contacts list
+	Exports
+	Imports
+	Users
+	
+
+Functionality
+	Multilanguage Inteface (first version views in spanish)
+ CRUD of Customers
+ Exporting to Excel
+ Big customer page (all data)
+ 
+ If a customer goes to an event, receives N points of gamification 
+	Import data
+		Rules of import: Give same points to a ¿Game? (correct name?) Ex: Customer One recieves 10 points (or 1 star) in Game Category 'Inspired People'
+		By Excel: New customers, update customers, give points.
+		BY files/folder:
+			If I choose a folder, all files will be upload, and associated to customer by filename: 'DNI11111111H-Mail confirmation.txt' then the file associated to record by dni
+
+	
+		
+Resources:
+	Database: Sql Server 
+	IDE: Visual studio 2017 Comunnity
+	Controls: Syncfusion 
+	
