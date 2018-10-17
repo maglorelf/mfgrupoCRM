@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace mfgrupoCRM.Data.Migrations
+namespace mfgrupoCRM.Data.EntityFramework.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {
