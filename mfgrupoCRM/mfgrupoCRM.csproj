@@ -4,6 +4,7 @@
     <UserSecretsId>aspnet-mfgrupoCRM-BB4B3224-7DAC-4B05-9260-D3C4293F0A8C</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
     <PackageReference Include="Syncfusion.EJ2" Version="16.3.0.21" />
     <PackageReference Include="Syncfusion.Compression.NETStandard" Version="16.3.0.21" />
     <PackageReference Include="Syncfusion.XlsIO.NETStandard" Version="16.3.0.21" />
@@ -15,6 +16,10 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0-preview2-35157" PrivateAssets="All" />
     <PackageReference Include="Syncfusion.EJ.AspNet.Core" Version="16.3.0.21" />
     <PackageReference Include="Syncfusion.Licensing" Version="16.3.0.22-beta" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mfgrupoCRM.App\mfgrupoCRM.App.csproj" />
+    <ProjectReference Include="..\mfgrupoCRM.Data.EntityFramework\mfgrupoCRM.Data.EntityFramework.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Content Update="Views\Contact\Export.cshtml">
