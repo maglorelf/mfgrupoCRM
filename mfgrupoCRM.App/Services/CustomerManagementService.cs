@@ -13,10 +13,10 @@ namespace mfgrupoCRM.App.Services
     {
         protected ICustomerRepository repository;
         protected IMapper mapper;
-        public CustomerManagementService(ICustomerRepository customerRepository,IMapper mapper)
+        public CustomerManagementService(ICustomerRepository customerRepository, IMapper mapper)
         {
             repository = customerRepository;
-            mapper = mapper;
+            this.mapper = mapper;
         }
         public async Task<Customer> CreateCustomer(Customer customer)
         {
@@ -65,15 +65,15 @@ namespace mfgrupoCRM.App.Services
             return mapper.Map<CustomerManageDto>(await repository.GetCustomerById(id));
         }
 
-       
+
         public async Task<SearchResultDto<CustomerManageDto>> GetCustomers(string query, int pageNumber, int resultsPerPage)
         {
-            var filteredQuery = query.Trim();
-            var offset = (pageNumber - 1) * resultsPerPage;
+            string filteredQuery = query.Trim();
+            int offset = (pageNumber - 1) * resultsPerPage;
 
-            var (customers, totalFound) = repository.GetCustomersForSearchQuery(filteredQuery, offset, resultsPerPage);
+            (IEnumerable<Customer> customers, int totalFound) = repository.GetCustomersForSearchQuery(filteredQuery, offset, resultsPerPage);
 
-            var result = new SearchResult<Customer>
+            SearchResult<Customer> result = new SearchResult<Customer>
             {
                 Query = filteredQuery,
                 Results = customers.ToList(),
