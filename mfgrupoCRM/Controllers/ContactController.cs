@@ -10,6 +10,8 @@ namespace mfgrupoCRM.Controllers
 {
     public class ContactController : Controller
     {
+     
+
         public IActionResult Index()
         {
             var data = OrdersDetails.GetAllRecords();
