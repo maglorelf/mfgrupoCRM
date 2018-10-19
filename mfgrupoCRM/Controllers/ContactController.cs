@@ -5,16 +5,22 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using mfgrupoCRM.Models;
+using mfgrupoCRM.App.Abstractions.Interfaces;
 
 namespace mfgrupoCRM.Controllers
 {
     public class ContactController : Controller
     {
-     
+
+        ICustomerManagementService service;
+        public ContactController(ICustomerManagementService service)
+        {
+            this.service = service;
+        }
 
         public IActionResult Index()
         {
-            var data = OrdersDetails.GetAllRecords();
+            var data = service.GetCustomers(string.Empty, 0, 100);
             ViewBag.dataSource = data;
             return View();
         }
