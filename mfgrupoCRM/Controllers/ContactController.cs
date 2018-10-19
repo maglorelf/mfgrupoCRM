@@ -12,12 +12,12 @@ namespace mfgrupoCRM.Controllers
     public class ContactController : Controller
     {
 
-
         ICustomerManagementService service;
         public ContactController(ICustomerManagementService service)
         {
             this.service = service;
         }
+
         public IActionResult Index()
         {
             var data = service.GetCustomers(string.Empty, 0, 100);

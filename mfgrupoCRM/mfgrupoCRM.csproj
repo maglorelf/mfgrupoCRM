@@ -34,5 +34,11 @@
     <Content Update="Views\Manage\Index.cshtml">
       <Pack>$(IncludeRazorContentInPack)</Pack>
     </Content>
+    <Content Update="Views\Shared\_SelectLanguagePartial.cshtml">
+      <Pack>$(IncludeRazorContentInPack)</Pack>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Resources\Models\" />
   </ItemGroup>
 </Project>
