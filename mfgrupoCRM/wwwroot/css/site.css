@@ -1,4 +1,18 @@
-﻿body {
+﻿
+body, html {
+    height: 100%;
+}
+
+.nav-link[data-toggle].collapsed:after {
+    content: "▾";
+}
+
+.nav-link[data-toggle]:not(.collapsed):after {
+    content: "▴";
+}
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
