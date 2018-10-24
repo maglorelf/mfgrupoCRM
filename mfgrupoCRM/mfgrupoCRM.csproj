@@ -2,6 +2,7 @@
    <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <UserSecretsId>aspnet-mfgrupoCRM-BB4B3224-7DAC-4B05-9260-D3C4293F0A8C</UserSecretsId>
+    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="7.0.1" />
