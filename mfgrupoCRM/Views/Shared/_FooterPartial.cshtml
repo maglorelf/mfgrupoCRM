@@ -1,0 +1,14 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+<footer class="main-footer">
+    <!-- To the right -->
+    <div class="pull-right hidden-xs">
+        @await Html.PartialAsync("_SelectLanguagePartial")
+    </div>
+    <!-- Default to the left -->
+    <strong>@Localizer["Copyright"] &copy; @System.DateTime.Now.Year <a href="#">mfgrupoCRM</a>.</strong> @Localizer["Todos los derechos reservados."]
+</footer>

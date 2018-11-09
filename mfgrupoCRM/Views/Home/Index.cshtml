@@ -1,4 +1,9 @@
-@{
-    ViewData["Title"] = "Home Page";
-}
 
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = @Localizer["Inicio"];
+}
+@*<h2>@ViewData["Title"]</h2>*@
