@@ -1,5 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
 
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 <!DOCTYPE html>
@@ -97,104 +100,104 @@ desired effect
                     <ul class="nav navbar-nav">
                         @if (SignInManager.IsSignedIn(User))
                         {
-                            <!-- Messages: style can be found in dropdown.less-->
-                            <li class="dropdown messages-menu">
-                                <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="far fa-envelope"></i>
-                                    <span class="label label-success">4</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">You have 4 messages</li>
-                                    <li>
-                                        <!-- inner menu: contains the messages -->
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- start message -->
-                                                <a href="#">
-                                                    <div class="pull-left">
-                                                        <!-- User Image -->
-                                                        <img src="~/lib/AdminLTE/img/user2-160x160.jpg" dis class="img-circle" alt="User Image">
-                                                    </div>
-                                                    <!-- Message title and timestamp -->
-                                                    <h4>
-                                                        Support Team
-                                                        <small><i class="fas fa-clock"></i> 5 mins</small>
-                                                    </h4>
-                                                    <!-- The message -->
-                                                    <p>Why not buy a new awesome theme?</p>
-                                                </a>
-                                            </li>
-                                            <!-- end message -->
-                                        </ul>
-                                        <!-- /.menu -->
-                                    </li>
-                                    <li class="footer"><a href="#">See All Messages</a></li>
-                                </ul>
-                            </li>
-                            <!-- /.messages-menu -->
-                            <!-- Notifications Menu -->
-                            <li class="dropdown notifications-menu">
-                                <!-- Menu toggle button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="far fa-bell"></i>
-                                    <span class="label label-warning">10</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">You have 10 notifications</li>
-                                    <li>
-                                        <!-- Inner Menu: contains the notifications -->
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- start notification -->
-                                                <a href="#">
-                                                    <i class="fas fa-users text-aqua"></i> 5 new members joined today
-                                                </a>
-                                            </li>
-                                            <!-- end notification -->
-                                        </ul>
-                                    </li>
-                                    <li class="footer"><a href="#">View all</a></li>
-                                </ul>
-                            </li>
-                            <!-- Tasks Menu -->
-                            <li class="dropdown tasks-menu">
-                                <!-- Menu Toggle Button -->
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                    <i class="far fa-flag"></i>
-                                    <span class="label label-danger">9</span>
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li class="header">You have 9 tasks</li>
-                                    <li>
-                                        <!-- Inner menu: contains the tasks -->
-                                        <ul class="menu">
-                                            <li>
-                                                <!-- Task item -->
-                                                <a href="#">
-                                                    <!-- Task title and progress text -->
-                                                    <h3>
-                                                        Design some buttons
-                                                        <small class="pull-right">20%</small>
-                                                    </h3>
-                                                    <!-- The progress bar -->
-                                                    <div class="progress xs">
-                                                        <!-- Change the css width attribute to simulate progress -->
-                                                        <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
-                                                             aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
-                                                            <span class="sr-only">20% Complete</span>
+                            @*<!-- Messages: style can be found in dropdown.less-->
+                                <li class="dropdown messages-menu">
+                                    <!-- Menu toggle button -->
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="far fa-envelope"></i>
+                                        <span class="label label-success">4</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="header">You have 4 messages</li>
+                                        <li>
+                                            <!-- inner menu: contains the messages -->
+                                            <ul class="menu">
+                                                <li>
+                                                    <!-- start message -->
+                                                    <a href="#">
+                                                        <div class="pull-left">
+                                                            <!-- User Image -->
+                                                            <img src="~/lib/AdminLTE/img/user2-160x160.jpg" dis class="img-circle" alt="User Image">
                                                         </div>
-                                                    </div>
-                                                </a>
-                                            </li>
-                                            <!-- end task item -->
-                                        </ul>
-                                    </li>
-                                    <li class="footer">
-                                        <a href="#">View all tasks</a>
-                                    </li>
-                                </ul>
-                            </li>
+                                                        <!-- Message title and timestamp -->
+                                                        <h4>
+                                                            Support Team
+                                                            <small><i class="fas fa-clock"></i> 5 mins</small>
+                                                        </h4>
+                                                        <!-- The message -->
+                                                        <p>Why not buy a new awesome theme?</p>
+                                                    </a>
+                                                </li>
+                                                <!-- end message -->
+                                            </ul>
+                                            <!-- /.menu -->
+                                        </li>
+                                        <li class="footer"><a href="#">See All Messages</a></li>
+                                    </ul>
+                                </li>
+                                <!-- /.messages-menu -->
+                                <!-- Notifications Menu -->
+                                <li class="dropdown notifications-menu">
+                                    <!-- Menu toggle button -->
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="far fa-bell"></i>
+                                        <span class="label label-warning">10</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="header">You have 10 notifications</li>
+                                        <li>
+                                            <!-- Inner Menu: contains the notifications -->
+                                            <ul class="menu">
+                                                <li>
+                                                    <!-- start notification -->
+                                                    <a href="#">
+                                                        <i class="fas fa-users text-aqua"></i> 5 new members joined today
+                                                    </a>
+                                                </li>
+                                                <!-- end notification -->
+                                            </ul>
+                                        </li>
+                                        <li class="footer"><a href="#">View all</a></li>
+                                    </ul>
+                                </li>
+                                <!-- Tasks Menu -->
+                                <li class="dropdown tasks-menu">
+                                    <!-- Menu Toggle Button -->
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <i class="far fa-flag"></i>
+                                        <span class="label label-danger">9</span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li class="header">You have 9 tasks</li>
+                                        <li>
+                                            <!-- Inner menu: contains the tasks -->
+                                            <ul class="menu">
+                                                <li>
+                                                    <!-- Task item -->
+                                                    <a href="#">
+                                                        <!-- Task title and progress text -->
+                                                        <h3>
+                                                            Design some buttons
+                                                            <small class="pull-right">20%</small>
+                                                        </h3>
+                                                        <!-- The progress bar -->
+                                                        <div class="progress xs">
+                                                            <!-- Change the css width attribute to simulate progress -->
+                                                            <div class="progress-bar progress-bar-aqua" style="width: 20%" role="progressbar"
+                                                                 aria-valuenow="20" aria-valuemin="0" aria-valuemax="100">
+                                                                <span class="sr-only">20% Complete</span>
+                                                            </div>
+                                                        </div>
+                                                    </a>
+                                                </li>
+                                                <!-- end task item -->
+                                            </ul>
+                                        </li>
+                                        <li class="footer">
+                                            <a href="#">View all tasks</a>
+                                        </li>
+                                    </ul>
+                                </li>*@
                         }
                         <partial name="_LoginPartial" />
                         @if (SignInManager.IsSignedIn(User))
@@ -219,20 +222,20 @@ desired effect
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 @*<!-- Sidebar user panel (optional) -->
-                <div class="user-panel">
-                    <div class="pull-left image">
-                        <img src="~/lib/AdminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
-                    </div>
-                    <div class="pull-left info">
-                        <p>Alexander Pierce</p>
-                        <!-- Status -->
-                        <a href="#"><i class="fas fa-circle text-success"></i> Online</a>
-                    </div>
-                </div>*@
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <img src="~/lib/AdminLTE/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        </div>
+                        <div class="pull-left info">
+                            <p>Alexander Pierce</p>
+                            <!-- Status -->
+                            <a href="#"><i class="fas fa-circle text-success"></i> Online</a>
+                        </div>
+                    </div>*@
                 <!-- search form (Optional) -->
                 <form action="#" method="get" class="sidebar-form">
                     <div class="input-group">
-                        <input type="text" name="q" class="form-control" placeholder="Search...">
+                        <input type="text" name="q" class="form-control" placeholder=@Localizer["Buscar..."]>
                         <span class="input-group-btn">
                             <button type="submit" name="search" id="search-btn" class="btn btn-flat">
                                 <i class="fas fa-search"></i>
@@ -243,18 +246,18 @@ desired effect
                 <!-- /.search form -->
                 <!-- Sidebar Menu -->
                 <ul class="sidebar-menu" data-widget="tree">
-                    <li class="header">HEADER</li>
+                    @*<li class="header">HEADER</li>*@
                     <!-- Optionally, you can add icons to the links -->
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-link"></i> <span>Home</span></a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index"> <span>@Localizer["Inicio"]</span> <i class="fas fa-link"></i></a></li>
                     @if (SignInManager.IsSignedIn(User))
                     {
-                        <li><a asp-area="" asp-controller="Contact" asp-action="Index"><i class="fas fa-link"></i> <span>Contacts</span></a></li>
-                        <li><a asp-area="" asp-controller="Export" asp-action="Index"> <i class="fas fa-link"></i><span>Export</span></a></li>
-                        <li><a asp-area="" asp-controller="Import" asp-action="Index"><i class="fas fa-link"></i> <span>Import</span></a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="About"> <i class="fas fa-link"></i><span>About</span></a></li>
-                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy"><i class="fas fa-link"></i> <span>Privacy</span></a></li>
+                        <li><a asp-area="" asp-controller="Contact" asp-action="Index"> <span>@Localizer["Contactos"]</span> <i class="fas fa-users"></i></a></li>
+                        <li><a asp-area="" asp-controller="Export" asp-action="Index"> <span>@Localizer["Exportar"]</span> <i class="fas fa-file-export"></i></a></li>
+                        <li><a asp-area="" asp-controller="Import" asp-action="Index"> <span>@Localizer["Importar"]</span> <i class="fas fa-file-import"></i></a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About"><span>@Localizer["Sobre nosotros"]</span></a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Privacy"> <span>@Localizer["Privacidad"]</span></a></li>
                     }
-                  
+
                     @*<li class="active"><a href="#"><i class="fas fa-link"></i> <span>Link</span></a></li>
                         <li><a href="#"><i class="fas fa-link"></i> <span>Another Link</span></a></li>
                         <li class="treeview">
@@ -277,106 +280,99 @@ desired effect
         <!--Content Wrapper.Contains page content-->
 
         <div class="content-wrapper">
-        <!-- Content Header(Page header) -->
-        <partial name="_CookieConsentPartial" />
-        <section class="content-header">
-            <h1>
-                @ViewBag.Title
-                <small>@ViewBag.TitleDescription</small>
-            </h1>
-            @*<ol class="breadcrumb">
-                <li><a href="#"><i class="fas fa-tachometer-alt"></i> Level</a></li>
-                <li class="active">Here</li>
-            </ol>*@
-        </section>
-        <!-- Main content -->
-        <section class="content container-fluid">
-            <!--------------------------
-            | Your Page Content Here |
-            -------------------------->
-            @RenderBody()
-        </section>
-        <!-- /.content -->
-    </div>
-    <!-- /.content-wrapper -->
-    <!-- Main Footer -->
-    <footer class="main-footer">
-        <!-- To the right -->
-        <div class="pull-right hidden-xs">
-            @await Html.PartialAsync("_SelectLanguagePartial")
+            <!-- Content Header(Page header) -->
+            <partial name="_CookieConsentPartial" />
+            <section class="content-header">
+                <h1>
+                    @ViewBag.Title
+                    <small>@ViewBag.TitleDescription</small>
+                </h1>
+                @*<ol class="breadcrumb">
+                        <li><a href="#"><i class="fas fa-tachometer-alt"></i> Level</a></li>
+                        <li class="active">Here</li>
+                    </ol>*@
+            </section>
+            <!-- Main content -->
+            <section class="content container-fluid">
+                <!--------------------------
+                | Your Page Content Here |
+                -------------------------->
+                @RenderBody()
+            </section>
+            <!-- /.content -->
         </div>
-        <!-- Default to the left -->
-        <strong>Copyright &copy; @System.DateTime.Now.Year <a href="#">mfgrupoCRM</a>.</strong> All rights reserved.
-    </footer>
-    <!-- Control Sidebar -->
-    <aside class="control-sidebar control-sidebar-dark">
-        <!-- Create the tabs -->
-        <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
-            <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fas fa-home"></i></a></li>
-            <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fas fa-cogs"></i></a></li>
-        </ul>
-        <!-- Tab panes -->
-        <div class="tab-content">
-            <!-- Home tab content -->
-            <div class="tab-pane active" id="control-sidebar-home-tab">
-                <h3 class="control-sidebar-heading">Recent Activity</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:;">
-                            <i class="menu-icon fas fa-birthday-cake bg-red"></i>
-                            <div class="menu-info">
-                                <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                                <p>Will be 23 on April 24th</p>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
-                <h3 class="control-sidebar-heading">Tasks Progress</h3>
-                <ul class="control-sidebar-menu">
-                    <li>
-                        <a href="javascript:;">
-                            <h4 class="control-sidebar-subheading">
-                                Custom Template Design
-                                <span class="pull-right-container">
-                                    <span class="label label-danger pull-right">70%</span>
-                                </span>
-                            </h4>
-                            <div class="progress progress-xxs">
-                                <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-                <!-- /.control-sidebar-menu -->
+        <!-- /.content-wrapper -->
+        <!-- Main Footer -->
+        @await Html.PartialAsync("_FooterPartial")
+        <!-- Control Sidebar -->
+        <aside class="control-sidebar control-sidebar-dark">
+            <!-- Create the tabs -->
+            <ul class="nav nav-tabs nav-justified control-sidebar-tabs">
+                <li class="active"><a href="#control-sidebar-home-tab" data-toggle="tab"><i class="fas fa-home"></i></a></li>
+                <li><a href="#control-sidebar-settings-tab" data-toggle="tab"><i class="fas fa-cogs"></i></a></li>
+            </ul>
+            <!-- Tab panes -->
+            <div class="tab-content">
+                <!-- Home tab content -->
+                <div class="tab-pane active" id="control-sidebar-home-tab">
+                    <h3 class="control-sidebar-heading">Recent Activity</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <i class="menu-icon fas fa-birthday-cake bg-red"></i>
+                                <div class="menu-info">
+                                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                                    <p>Will be 23 on April 24th</p>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                    <h3 class="control-sidebar-heading">Tasks Progress</h3>
+                    <ul class="control-sidebar-menu">
+                        <li>
+                            <a href="javascript:;">
+                                <h4 class="control-sidebar-subheading">
+                                    Custom Template Design
+                                    <span class="pull-right-container">
+                                        <span class="label label-danger pull-right">70%</span>
+                                    </span>
+                                </h4>
+                                <div class="progress progress-xxs">
+                                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- /.control-sidebar-menu -->
+                </div>
+                <!-- /.tab-pane -->
+                <!-- Stats tab content -->
+                <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+                <!-- /.tab-pane -->
+                <!-- Settings tab content -->
+                <div class="tab-pane" id="control-sidebar-settings-tab">
+                    <form method="post">
+                        <h3 class="control-sidebar-heading">General Settings</h3>
+                        <div class="form-group">
+                            <label class="control-sidebar-subheading">
+                                Report panel usage
+                                <input type="checkbox" class="pull-right" checked>
+                            </label>
+                            <p>
+                                Some information about this general settings option
+                            </p>
+                        </div>
+                        <!-- /.form-group -->
+                    </form>
+                </div>
+                <!-- /.tab-pane -->
             </div>
-            <!-- /.tab-pane -->
-            <!-- Stats tab content -->
-            <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-            <!-- /.tab-pane -->
-            <!-- Settings tab content -->
-            <div class="tab-pane" id="control-sidebar-settings-tab">
-                <form method="post">
-                    <h3 class="control-sidebar-heading">General Settings</h3>
-                    <div class="form-group">
-                        <label class="control-sidebar-subheading">
-                            Report panel usage
-                            <input type="checkbox" class="pull-right" checked>
-                        </label>
-                        <p>
-                            Some information about this general settings option
-                        </p>
-                    </div>
-                    <!-- /.form-group -->
-                </form>
-            </div>
-            <!-- /.tab-pane -->
-        </div>
-    </aside>
-    <!-- /.control-sidebar -->
-    <!-- Add the sidebar's background. This div must be placed
-    immediately after the control sidebar -->
-    <div class="control-sidebar-bg"></div>
+        </aside>
+        <!-- /.control-sidebar -->
+        <!-- Add the sidebar's background. This div must be placed
+        immediately after the control sidebar -->
+        <div class="control-sidebar-bg"></div>
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
