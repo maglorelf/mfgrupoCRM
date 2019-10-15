@@ -18,20 +18,22 @@ namespace mfgrupoCRM
         {
 
             services.ConfigureAutomapper();
-            services.ConfigureSyncfusion(Configuration);
             services.ConfigureCookies(Configuration);            
             services.ConfigureDatabase(Configuration);
+            services.ConfigureBlazor(Configuration);
             services.ConfigureApplicationServices();
-            services.ConfigureMVC(Configuration);
+            
             services.ConfigureLocalization(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+
             app.ConfigureErrorPages(env);
+            app.ConfigureSecurity(env);
             app.ConfigureLocalization();
-            app.ConfigureMVC();
+            app.ConfigureBlazor();
             app.ConfigureCookies();
         }
     }

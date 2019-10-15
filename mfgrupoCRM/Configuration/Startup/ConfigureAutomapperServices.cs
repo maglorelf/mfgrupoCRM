@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using mfgrupoCRM.App.Profiles;
+using mfgrupoCRM.Application.Profiles;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

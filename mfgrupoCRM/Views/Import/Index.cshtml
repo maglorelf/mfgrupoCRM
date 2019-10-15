@@ -1,11 +1,9 @@
-﻿@using Syncfusion.EJ2
-@{
+﻿@{
     ViewBag.Title = "Upload";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@{
-    var asyncSettings = new Syncfusion.EJ2.Inputs.UploaderAsyncSettings { SaveUrl = "/Upload/Save", RemoveUrl = "/Upload/Remove" };
-}
+
+ 
 <h2>Upload Features:</h2>
 <br/>
 <li> Upload Samples - Default</li>
@@ -13,15 +11,12 @@
 <br/>
 <div id = "ControlRegion">
               <div class="col-lg-8 control-section">
-        <div class="control_wrapper">
-            <ejs-uploader id="UploadFiles" removing="onFileRemove" dropArea=".control-fluid" asyncSettings="@asyncSettings">
-            </ejs-uploader>
-        </div>
+
     </div>
     <div class="col-lg-4 property-section">
         <div id="property" title="Properties">
             <div style="margin-left: 50px; padding-top:25px;">
-                <ejs-checkbox id="checkAutoUpload" label="Auto Upload" checked="true" change="onChange"></ejs-checkbox>
+             
             </div>
         </div>
     </div>

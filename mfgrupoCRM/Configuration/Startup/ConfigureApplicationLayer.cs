@@ -1,5 +1,5 @@
-﻿using mfgrupoCRM.App.Abstractions.Interfaces;
-using mfgrupoCRM.App.Services;
+﻿using mfgrupoCRM.Application.Abstractions.Interfaces;
+using mfgrupoCRM.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

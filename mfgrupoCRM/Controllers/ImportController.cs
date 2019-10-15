@@ -14,8 +14,8 @@ namespace mfgrupoCRM.Controllers
     {
         //
         // GET: /UploadDefault/
-              private IHostingEnvironment hostingEnv;
-        public ImportController(IHostingEnvironment env)
+              private IWebHostEnvironment hostingEnv;
+        public ImportController(IWebHostEnvironment env)
         {
             this.hostingEnv = env;
         }

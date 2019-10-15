@@ -1,45 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <UserSecretsId>aspnet-mfgrupoCRM-BB4B3224-7DAC-4B05-9260-D3C4293F0A8C</UserSecretsId>
-    <TypeScriptToolsVersion>3.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="AutoMapper" Version="7.0.1" />
-    <PackageReference Include="Syncfusion.EJ2" Version="16.3.0.21" />
-    <PackageReference Include="Syncfusion.Compression.NETStandard" Version="16.3.0.21" />
-    <PackageReference Include="Syncfusion.XlsIO.NETStandard" Version="16.3.0.21" />
-    <PackageReference Include="Syncfusion.Pdf.NETStandard" Version="16.3.0.21" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <Content Remove="Views\Shared\Error.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.4" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0-preview3-35497" PrivateAssets="All" />
-    <PackageReference Include="Syncfusion.EJ.AspNet.Core" Version="16.3.0.21" />
-    <PackageReference Include="Syncfusion.Licensing" Version="16.3.0.22-beta" />
+    <PackageReference Include="Blazorise.Bulma" Version="0.8.6.1" />
+    <PackageReference Include="Blazorise.Icons.FontAwesome" Version="0.8.6.1" />
+    <PackageReference Include="Blazorise.Sidebar" Version="0.8.6.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\mfgrupoCRM.App\mfgrupoCRM.App.csproj" />
+    <ProjectReference Include="..\mfgrupoCRM.Application\mfgrupoCRM.Application.csproj" />
     <ProjectReference Include="..\mfgrupoCRM.Data.EntityFramework\mfgrupoCRM.Data.EntityFramework.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Update="Views\Contact\Export.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Contact\Index.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Contact\Import.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Manage\Index.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-    <Content Update="Views\Shared\_SelectLanguagePartial.cshtml">
-      <Pack>$(IncludeRazorContentInPack)</Pack>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\Models\" />
   </ItemGroup>
 </Project>

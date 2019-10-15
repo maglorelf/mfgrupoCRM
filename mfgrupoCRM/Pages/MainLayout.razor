@@ -1,0 +1,55 @@
+﻿@inherits LayoutComponentBase
+
+<header>
+    <h1>Doctor Who&trade; Episode Database</h1>
+</header>
+<Sidebar Data="@sidebarInfo" />
+<nav>
+    <a href="masterlist">Master Episode List</a>
+    <a href="search">Search</a>
+    <a href="new">Add Episode</a>
+</nav>
+
+@Body
+
+<footer>
+    @TrademarkMessage
+</footer>
+
+@code {
+    public string TrademarkMessage { get; set; } =
+        "Doctor Who is a registered trademark of the BBC. " +
+        "https://www.doctorwho.tv/";
+
+    Sidebar sidebar;
+
+    SidebarInfo sidebarInfo = new SidebarInfo
+    {
+        Brand = new SidebarBrandInfo
+        {
+            Text = "Blazorise Demo"
+        },
+        Items = new List<SidebarItemInfo>
+{
+    new SidebarItemInfo { To = "", Text = "Dashboard" },
+    new SidebarItemInfo
+    {
+    Text = "Email",
+    SubItems = new List<SidebarItemInfo>
+    {
+        new SidebarItemInfo { To = "email/inbox", Text = "Inbox" },
+        new SidebarItemInfo { To = "email/compose", Text = "Compose Email" },
+        }
+        },
+        new SidebarItemInfo
+        {
+        Text = "Applications",
+        SubItems = new List<SidebarItemInfo>
+        {
+            new SidebarItemInfo { To = "apps/todo", Text = "Todo List" }
+            }
+            },
+            }
+    };
+
+}

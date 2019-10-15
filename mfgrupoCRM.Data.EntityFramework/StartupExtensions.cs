@@ -9,15 +9,15 @@ namespace mfgrupoCRM.Data.EntityFramework
 {
     public static class StartupExtensions
     {
-      
-		public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration config)
+
+        public static IServiceCollection AddRepositories(this IServiceCollection services, IConfiguration config)
         {
             var connectionString = config.GetConnectionString("DefaultConnection");
             //services.AddDbContext<ApplicationDbContext>(options =>
             //options.UseSqlServer(
             //    config.GetConnectionString("DefaultConnection")));
-           
-           Action<DbContextOptionsBuilder> optionsBuilder;
+
+            Action<DbContextOptionsBuilder> optionsBuilder;
             optionsBuilder = options => options.UseSqlServer(connectionString);
 
 
@@ -29,8 +29,8 @@ namespace mfgrupoCRM.Data.EntityFramework
             services.AddDefaultIdentity<IdentityUser>()
                            .AddEntityFrameworkStores<ApplicationDbContext>();
             //// db repos
-          services.AddTransient<ICustomerRepository, CustomerRepository>();
-          
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+
             return services;
 
         }

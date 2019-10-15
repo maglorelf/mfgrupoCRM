@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28010.2041
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mfgrupoCRM", "mfgrupoCRM\mfgrupoCRM.csproj", "{7DE2C420-F564-404D-8170-5AE73A599DD8}"
 EndProject
@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mfgrupoCRM.Core", "mfgrupoC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mfgrupoCRM.Data.Abstractions", "mfgrupoCRM.Data.Abstractions\mfgrupoCRM.Data.Abstractions.csproj", "{086D31A1-A406-43C7-9A25-04AAA9E0040A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mfgrupoCRM.App", "mfgrupoCRM.App\mfgrupoCRM.App.csproj", "{6110EFBE-CA77-4926-A706-5905F87B407B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "mfgrupoCRM.Application", "mfgrupoCRM.Application\mfgrupoCRM.Application.csproj", "{6110EFBE-CA77-4926-A706-5905F87B407B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
